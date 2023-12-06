@@ -1,0 +1,3086 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+  --shadow : 0px 4px 10px 0px rgba(153, 153, 153, 0.10);
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  
+  background: #F6F9FB;
+}
+.header{
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header img.logo {
+  width: 10rem;
+}
+.searchBox .input {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+  margin-top: 5rem;
+}
+.searchBox .input a img{
+  width: 2.5rem;
+  margin-left: 1.5rem;
+}
+.searchBox .input input{
+  border-radius: 1.6rem;
+  background: #022F96;
+  padding-left: 1.5rem;
+  width: 26.2rem;
+  height: 4.8rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #00A3FF;
+  border: 0;
+  outline: none;
+  width: -webkit-fill-available;
+  
+}
+.searchBox  a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 1.2rem;
+}
+.searchBox .input input::placeholder{
+  color: #00A3FF;
+}
+.sideNav .searchBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+  background-color: #eaeaea;
+  padding-top: 1.5rem;
+  overflow: hidden;
+  width: 0;
+  padding-left: 0;
+  transition: all 0.2s ease-in-out;
+}
+.sideNav .searchBox.active{
+  width: 40rem;
+  padding-left: 1.5rem;
+  
+}
+.sideNav .searchBox .topH {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+
+.sideNav .Dropdownbutton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sideNav .notif .dropdownMenu .topH{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sideNav .notif .dropdownMenu .topH img{
+  width: 2rem !important;
+  height: auto !important;
+}
+.sideNav .notif .dropdownMenu{
+  position: absolute;
+  width: 0;
+  left: 0;
+  overflow: hidden;
+  top: 0;
+  background-color: #F6F9FB;
+padding-top: 1.5rem;
+  height: 100vh;
+  z-index: 100;
+  border-radius: 1rem;
+  transition: all .2s ease-in-out;
+  
+}
+.sideNav .notif .dropdownMenu.active{
+  width: 40rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.sideNav .notif .dropdownMenu .notification{
+  display: flex;
+  padding: 1rem 1.5rem;
+  color: black;
+  text-decoration: none;
+  border-radius: 1rem;
+}
+.sideNav .notif .dropdownMenu  .NotificationContainer{
+  overflow-y: scroll;
+margin-top: 2.5rem;
+  max-height: 90vh;
+}
+.sideNav .notif .dropdownMenu .notification .dropdownButton img{
+  width: 4.3rem;
+  height: 4.3rem;
+  border-radius: 100%;
+}
+.sideNav .notif .dropdownButton {
+  position: relative;
+  width: 7rem;
+}
+.sideNav .notif .dropdownButton span{
+width: 1.4rem;
+top: .5rem;
+right: .5rem;
+display: flex;
+border-radius: 100%;
+height: 1.4rem;
+position: absolute;
+background-color: #00A3FF;
+}
+
+.sideNav .notif .dropdownMenu p.null{
+  font-size: 1.6rem;
+  width: 100%;
+  text-align: center;
+}
+.sideNav .notif .dropdownMenu .notification img{
+  width: 4.3rem;
+  height: 4.3rem;
+  border-radius: 100%;
+}
+.sideNav .notif .dropdownMenu .notification:hover{
+  background-color: #99999942;
+  
+}
+.sideNav .notif .dropdownMenu .notification .notifContent{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1.5rem;
+  justify-content: flex-start;
+}
+.sideNav .notif .dropdownMenu .notification .btns{
+  margin-left: 1.5rem;
+}
+.sideNav .notif .dropdownMenu .notification .btns button{
+  padding: 1rem 1.5rem;
+}
+.sideNav .notif .dropdownMenu .notification .notifContent p:nth-child(1){
+  font-size: 1.6rem;
+}
+.sideNav .notif .dropdownMenu .notification.unseen .notifContent p:nth-child(1){
+  font-weight: 500;
+  color: black;
+}
+.sideNav .notif .dropdownMenu .notification .notifContent p:nth-child(2){
+  font-size: 1.4rem;
+  color: #626262;
+  
+}
+.sideNav .notif .dropdownMenu .notification.unseen .notifContent p:nth-child(2){
+  font-weight: 500;
+  color: black;
+}
+.sideNav .user{
+  position: relative;
+}
+
+.sideNav .user .dropdownMenu{
+  position: absolute;
+  bottom: 100%;
+  background-color: white;
+  padding: 1rem 0;
+  border-radius: 1rem;
+  display: none;
+  width: 200px;
+  left: 0;
+  flex-direction: column;
+}
+.sideNav .user .dropdownMenu.active{
+  display: flex;
+}
+.sideNav .user .dropdownMenu p,
+.sideNav .user .dropdownMenu a{
+  font-size: 1.4rem;
+  color: #626262;
+  text-decoration: non;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  margin: 0;
+}
+.sideNav .user img.dp{
+  width: 4.3rem;
+  border-radius: 100%;
+  height: 4.3rem;
+}
+.sideNav .user p{
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #999999;
+  margin-left: 1rem;
+  margin-right: .5rem;
+}
+.sidebarRight .header{
+  justify-content: center;
+  margin: auto;
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
+}
+.container{
+width: 100%;
+}
+
+.postsContainer .writeSomething{
+  width: 100%;
+  background-color: white;
+  padding: 1.8rem 0;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+}
+.postsContainer .writeSomething h2.heading{
+  font-size: 1.8rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #F1F1F5;
+  font-weight: 400;
+  color: #2F2F2F;
+  padding-left: 3.5rem;
+  margin-bottom: 1.8rem;
+} 
+.postsContainer .writeSomething .input{
+  display: flex;
+  padding: 0 2.8rem 0 3.5rem;
+  width: 100%;
+}
+.postsContainer .writeSomething .input .inputfield{
+  display: flex;
+  width: -webkit-fill-available;
+}
+.postsContainer .writeSomething .input .inputfield p{
+  width: -webkit-fill-available;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #999999;
+}
+.postsContainer .writeSomething .input .uploadIcons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.postsContainer .writeSomething .input .uploadIcons img{
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.PostMdalContainer{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.342);
+}
+.PostMdalContainer .PostModal{
+  width: 93.5rem;
+  min-height: 43.5rem;
+  border-radius: 1.5rem;
+  background: #FFF;
+  box-shadow: 0px 2px 4px 0px rgba(153, 153, 153, 0.10);
+  padding: 0 3rem;
+  padding-bottom: 3rem;
+}
+.PostMdalContainer .PostModal .top{
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #00000017;
+}
+.PostMdalContainer .PostModal .top img{
+  width: 2rem;
+  height: 2rem;
+}
+.PostMdalContainer .PostModal .top .topH{
+  font-size: 1.6rem;
+  color: #999999;
+  font-weight: 500;
+}
+.PostMdalContainer .PostModal .user{
+  display: flex;
+  margin-top: 2.5rem;
+  align-items: center;
+}
+.PostMdalContainer .PostModal .user img{
+  width: 4.3rem ;
+  height: 4.3rem;
+  border-radius: 100%;
+}
+.PostMdalContainer .PostModal .DisplayImgs{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.PostMdalContainer .PostModal .DisplayImgs .img {
+  position: relative;
+}
+.PostMdalContainer .PostModal .DisplayImgs .img img{
+  width: 15rem;
+  height: 15rem;
+  object-fit: contain;
+  background-color: #00000017;
+  border-radius: 1.6rem;
+  margin-right: 2rem;
+}
+.PostMdalContainer .PostModal .DisplayImgs .img img.close{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10; 
+}
+.PostMdalContainer .PostModal .user {
+  display: flex;
+  align-items: flex-start;
+}
+.PostMdalContainer .PostModal .user .username{
+  font-size: 1.6rem;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  color: black;
+}
+.PostMdalContainer .PostModal .user select{
+  margin-left: 1.5rem;
+  border : 1px solid #999;
+  font-size: 1.4rem;
+  outline: none;
+}
+
+.PostMdalContainer .PostModal  .searchUsers {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.PostMdalContainer .PostModal  .searchUsers .input{
+  border-radius: 1rem;
+  background: #E9F0F4;
+  padding-left: 1.5rem;
+  height: 4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+.PostMdalContainer .PostModal  .searchUsers .input input{
+  margin-left: 1rem;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+.PostMdalContainer .PostModal .searchUsers .input img{
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.PostMdalContainer .PostModal .searchUsers .searchedUsers{
+  position: absolute;
+  max-height: 19.2rem;
+  overflow: scroll;
+  display:block;
+  top: 100%;
+  background-color: white;
+  width: 100%;
+}
+.PostMdalContainer .PostModal .searchUsers .searchedUsers .user{
+  display: flex;
+  align-items: center;
+  background: transparent;
+  margin: 0;
+  border-bottom: 1px solid #999;
+  border-radius: 0;
+  padding: 1rem;
+  width: 100%;
+}
+.PostMdalContainer .PostModal .searchUsers .searchedUsers .user img{
+  width: 4.3rem;
+  border-radius: 100%;
+}
+.PostMdalContainer .PostModal .searchUsers .searchedUsers .user p{
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+}
+.PostMdalContainer .PostModal .searchUsers .selectedUsers{
+  max-width: 80%;
+  overflow: scroll;
+  padding-left: .5rem;
+  display: flex;
+  gap: 1rem;
+}
+.PostMdalContainer .PostModal .searchUsers .selectedUsers p{
+  display: flex;
+  padding: 1rem;
+  background-color: #022F96;
+  color: #02F7EA;
+  font-size: 1.4rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  height: 4rem;
+  min-width: max-content;
+}
+.PostMdalContainer .PostModal .searchUsers .selectedUsers p img{
+  width: 1.5rem;
+  margin-left: 1rem;
+}
+.PostMdalContainer .PostModal .searchUsers{
+  width: max-content;
+}
+.PostMdalContainer .PostModal form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.PostMdalContainer .PostModal form textarea{
+  font-size: 1.6rem;
+  border: 0;
+  background-color: transparent;
+  margin-top: 2rem;
+  width: 100%;
+  min-height: 11rem;
+  outline: none;
+}
+.PostMdalContainer .PostModal .addToPost{
+  width: 100%;
+  height: 5rem;
+  border: 1px solid #999999;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  margin-top: 1rem;
+}
+.PostMdalContainer .PostModal .addToPost p{
+  font-size: 1.6rem;
+  color: #999999;
+  font-weight: 500;
+}
+.PostMdalContainer .PostModal .addToPost .img{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.PostMdalContainer .PostModal .addToPost .img input{
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+}
+.PostMdalContainer .PostModal .btn{
+  width: 12rem;
+  height: 5rem;
+  font-size: 1.6rem;
+  margin-left: auto;
+  margin-top: 2.5rem;
+}
+
+.postsContainer .topH{
+  font-size: 1.6rem;
+  color: #999999;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.postsContainer .Posts{
+  width: 100%;
+}
+.postsContainer .post{
+  width: 100%;
+  border-radius: 3rem;
+  background: #FFF;
+  box-shadow: 0px 10px 100px 0px rgba(135, 135, 135, 0.09);
+  display: flex;
+  margin: auto;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  align-items: flex-start;
+}
+.postsContainer .post .Slider {
+  position: relative;
+}
+.postsContainer .post .Slider .slides{
+
+  width: 45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45rem;
+}
+.postsContainer .post .Slider .slides img.slide{
+  width: auto;
+  height: auto;
+  min-width: 50%;
+  min-height: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 3rem;
+}
+.postsContainer .post .Slider .button{
+  display: flex;
+  width: 40.3rem;
+  height: 8rem;
+  border-radius: 2rem;
+  background: rgba(246, 249, 251, 0.80);
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.9rem;
+  padding: 0 2.5rem;
+
+}
+.postsContainer .post .Slider .button .nav {
+  display: flex;
+  max-width: 24.5rem;
+  overflow: scroll;
+}
+
+.postsContainer .post .Slider .button .nav img{
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 1rem;
+  object-fit: contain;
+  margin: 0 .75rem;
+}
+.postsContainer .post.onlyTextPost .left{
+  display: none;
+}
+.postsContainer .post.onlyTextPost .comments{
+display : none}
+
+.postsContainer .right {
+  margin-left: 2.5rem;
+  width: -webkit-fill-available;
+}
+.postsContainer .right .user{
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #00000017;
+  width: 100%;
+}
+.postsContainer .comments{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  border-bottom: 1px solid #00000017;
+  height: 21.2rem;
+  margin-top: 2.5rem;
+  align-items: flex-start;
+}
+.postsContainer .comments .comment{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.postsContainer .comments .comment .user{
+  display: flex;
+  border: 0;
+  text-decoration: none;
+}
+.postsContainer .comments .comment .user img{
+  width: 4.3rem;
+  height: 4.3rem;
+  border-radius: 100%;
+}
+.postsContainer .comments .comment .user .username{
+  margin-left: 1.5rem;
+}
+
+.postsContainer .comments .comment .user .username h2{
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #999;
+}
+.postsContainer .comments .comment .user .username p{
+  font-size: 1.2rem;
+  color: #999;
+}
+.postsContainer .comments .comment .text{
+  font-size: 1.4rem;
+  color: white;
+  padding: 1rem;
+  background-color: #022F96;
+  border-radius: 1rem;
+  width: max-content;
+}
+.postsContainer .engage{
+  display: flex;
+  padding-top: 1.5rem;
+
+}
+.postsContainer .engage div{
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #999;
+  margin-right: 3rem;
+}
+.postsContainer .engage div img,
+.postsContainer .engage div svg{
+  margin-right: .5rem;
+  width: 2rem;
+  height: 2rem;
+}
+.postsContainer .right .LikesCount{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.postsContainer .right .LikesCount span,
+.postsContainer .right .LikesCount a{
+  font-weight: 600;
+  color: #022F96;
+  text-decoration: none;
+  
+}
+.postsContainer .right .LikesCount p:nth-child(1){
+  margin-right: .5rem;
+}
+.postsContainer .engage div svg{
+  stroke : #999999;
+}
+.postsContainer .engage div.LikedPost {
+  color: #022F96;
+}
+.postsContainer .engage div.LikedPost svg path{
+  stroke: transparent;
+  fill: #022F96;
+
+}
+.postsContainer .writeComment{
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  width: 100%;
+  position: relative;
+}
+.postsContainer .writeComment input{
+  width: -webkit-fill-available;
+  border: 0;
+  background-color: transparent;
+  font-size: 1.6rem;
+  padding-left: 1.5rem;
+  outline: none;
+  
+}
+.postsContainer .writeComment button{
+  font-size: 1.6rem;
+  color: #022F96;
+  background-color: transparent;
+  border: 0;
+  font-weight: 600;
+}
+.postsContainer .writeComment .EmojiPicker{
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
+.postsContainer .right  .Top{
+  display: flex;
+  justify-content: space-between;
+}
+.postsContainer .right .Top .delete{
+  display: flex;
+  flex-direction: column;
+}
+.postsContainer .right .Top .delete .circle{
+  width: .6rem;
+  height: .6rem;
+  border-radius: 100%;
+  background-color: #626262;
+  margin-bottom: .5rem;
+}
+.postsContainer .right .Top .dropdown{
+  position: relative;
+  height: max-content;
+}
+.postsContainer .right .Top .dropdownMenu{
+  width: 23.8rem;
+  height: auto;
+  padding: .7rem;
+  padding-bottom: 2.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  box-shadow: var(--shadow);
+  z-index: 10;
+background-color: white;
+top: 100%;
+left: 100%;
+font-size: 1.8rem;
+font-weight: 500;
+}
+  .postsContainer .right .Top .dropdownMenu div{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    width: 100%;
+  }
+.postsContainer .right .Top .dropdownMenu img{
+  width: 1.6rem;
+  margin-right: 1.2rem;
+}
+.postsContainer .right .user .description {
+  font-size: 1.5rem !important;
+}
+.postsContainer .right .user .description .editPost textarea{
+  width: 100%;
+  min-height: 3rem;
+  max-height: 5rem;
+  font-size: 1.6rem;
+  border: 1px solid grey;
+}
+.postsContainer .right .user .description .editPost .buttons{
+  display: flex;
+}
+.postsContainer .right .user .description .editPost button{
+  padding: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-top: 1rem;
+}
+.postsContainer .right .user .description .editPost button:nth-child(2){
+  margin-left: 1rem;
+  background: transparent;
+  border: 1.5px solid #022F96;
+  color: #022F96;
+}
+.postsContainer .right .user .userDetails  {
+  display: flex;
+  text-decoration: none;
+}
+.postsContainer .right .user .userDetails  img{
+  width: 4.3rem;
+  height: 4.3rem;
+  border-radius: 100%;
+}
+.postsContainer .right .user  .description{
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  color: #999;
+}
+.postsContainer .right .user .userDetails  .username{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 1.5rem;
+}
+.postsContainer .right .user .username h2{
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #999999;
+}
+.postsContainer .right .user .username p{
+  font-size: 1.5rem;
+  color: #999999;
+}
+.StoryUpdates{
+  display: flex;
+  margin-bottom: 5rem;
+}
+.StoryUpdates .AddUpdate{
+  margin: 0 1.5rem;
+position: relative;
+}
+.StoryUpdates .AddUpdate input{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 100;
+}
+.StoryUpdates .AddUpdate .userImg {
+  position: relative;
+}
+.StoryUpdates .AddUpdate .userImg img:nth-child(1){
+  border-radius: 10.7rem;
+  border: .5rem solid #00A3FF;
+  background: url(<path-to-image>), lightgray 0px -7.261px / 100% 150% no-repeat;
+  width: 9.5rem;
+  height: 9.5rem;
+  
+}
+.StoryUpdates .AddUpdate .userImg img:nth-child(2){
+  position: absolute;
+  top: 7rem;
+  left: 6.9rem;
+}
+.StoryUpdates .AddUpdate p{
+color: #626262;
+font-size: 1.2rem;
+text-align: center;
+font-weight: 500;
+}
+.StoryUpdates .allStoryUpdates {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.StoryUpdates .allStoryUpdates .storyUpdate {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.StoryUpdates .allStoryUpdates .storyUpdate p{
+  font-size: 1.2rem;
+  color: #626262;
+}
+.StoryUpdates .allStoryUpdates .storyUpdate .userimg{
+  background-color: #00A3FF;
+  width: 9.2rem;
+  height: 9.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  
+}
+
+.StoryUpdates .allStoryUpdates .storyUpdate .userimg img{
+width: 8.8rem;
+z-index: 10;
+height: 8.8rem;
+border: .6rem solid white;
+border-radius: 5rem;
+}
+.StoryModal{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0,0,0,0.3);
+}
+.StoryModal img{
+  max-width: 80%;
+  max-height: 80vh;
+}
+
+.LoginRegister{
+  width: 100%;
+  display: flex;
+  height: max-content;
+  min-height: 100vh;
+}
+
+.LoginRegister .left{
+  width: 50%;
+  max-height: 100%;
+  object-fit: cover;
+  background: url("./Images/loginBG.png");
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+}
+.LoginRegister .left h2{
+  font-size: 10rem;
+  -webkit-text-stroke : 2px white;
+  color: transparent;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .LoginRegister .left .logo{
+    position: absolute;
+    left: 2.2rem;
+    top: 2.2rem;
+  }
+  .LoginRegister .right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .LoginRegister .right .box{
+    padding: 5rem;
+    width: 56rem;
+    background: white;
+    border-radius: 1.6rem;
+    box-shadow: var(--shadow);
+
+  }
+  .LoginRegister .right .topButton{
+    width: 46.1rem;
+    height: 6rem;
+    margin-bottom: 3rem;
+    border: 1px solid #626262;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 8.8rem;
+    padding-right: 7.1rem;
+    border-radius: 5rem;
+    position: relative;
+  }
+
+  .btn{
+    border: 0;
+    height: 4.6rem;
+    background: #022F96;
+    font-size: 1.4rem;
+    border-radius: .55rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+
+  }
+  .LoginRegister .right .topButton .bg{
+    width: 22.5rem;
+    height: 5.4rem;
+    position: absolute;
+    left: 0;
+    transition: all .3s ease-in-out;
+    top: .3rem;
+    background: #000000;
+    border-radius: 5rem;
+  }
+  .LoginRegister .right .topButton .bg.loginbg{
+    left: 0;
+  }
+  .LoginRegister .right .topButton .bg.registerbg{
+    left: 51%;
+  }
+    .LoginRegister .right .topButton p{
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    .LoginRegister .right .topButton p.active{
+      color: white;
+      z-index: 1;
+    }
+    .LoginRegister .right .panel{
+      display: none;
+    }
+    .LoginRegister .right .panel.active{
+      display: block;
+    }
+    .LoginRegister .right .input {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .LoginRegister .right .input input{
+      width: 46.1rem;
+      
+      height: 4.6rem;
+      border-radius: 1rem;
+      border: 1px solid #000; 
+      padding-left: 1.5rem;
+      
+    }
+    .LoginRegister .right .input label{
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    .LoginRegister .right .inputs{
+      width: 46.1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .LoginRegister .right .inputs .input input{
+      width: 22.3rem;
+    }
+    
+    .LoginRegister .right a{
+      margin-top: 2.2rem;
+      width: 100%;
+      text-align: right;
+      font-size: 1.6rem;
+      display: block;
+      color: #000;
+      font-weight: 500;
+    }
+    .LoginRegister .right a span{
+      text-decoration: none;
+    }
+    .LoginRegister .right .btn{
+      width: 100%;
+background: black;
+      margin-top: 2.2rem;
+    }
+
+
+
+
+.mainContainer{
+  width: 174rem;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.mainContainer .center.brokenPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mainContainer .center.brokenPage div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainContainer .center.brokenPage img{
+  width: 6rem;
+  
+}
+.mainContainer .center.brokenPage p{
+  font-size: 4rem;
+  color: #999;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+.mainContainer .center.brokenPage a.btn{
+  padding: 1.5rem 2.5rem;
+  width: max-content;
+  margin: 2rem auto;
+  text-decoration: none;
+}
+.mainContainer .center{
+  margin: 0 2.5rem;
+  width: 93.6rem;
+  min-height: 100vh;
+  background: #FFF;
+  box-shadow: 0px 10px 18px 6px rgba(203, 203, 203, 0.33);
+  padding: 2.5rem;
+}
+.mainContainer .center .userProfile{
+  display: flex;
+  width: 100%;
+  height: max-content;
+  padding: 2rem ;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #022F96;
+  border-radius: 1.6rem;
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+.mainContainer .center .userProfile .profilePic{
+  width: 12rem;
+  height: 12rem;
+  border-radius: 100%;
+}
+.mainContainer .center .userProfile .userDetails{
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+}
+.mainContainer .center .userProfile .dropdown{
+  margin-left: auto;
+  position: relative;
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+}
+.mainContainer .center .userProfile .dropdown .options{
+  display: flex;
+  flex-direction: column;
+}
+.mainContainer .center .userProfile .dropdown .options .circle{
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: white;
+  border-radius: 100%;
+  margin-bottom: 0.4rem;
+}
+.mainContainer .center .userProfile .dropdown .dropdownMenu{
+  width: 23.8rem;
+  height: auto;
+  padding: 0.7rem;
+  padding-bottom: 2.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  box-shadow: var(--shadow);
+  z-index: 10;
+  background-color: white;
+  top: 100%;
+  left: 100%;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  font-weight: 500;
+}
+.mainContainer .center .userProfile .dropdown .dropdownMenu p{
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  width: 100%;
+}
+.mainContainer .center .userProfile.authUserDetails{
+  display: none;
+}
+
+.mainContainer .center .userProfile .userDetails .left {
+  display: flex;
+}
+.mainContainer .center .userProfile .userDetails  .username{
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.2rem;
+  margin-right: 1rem;
+  align-items: flex-start;
+}
+.mainContainer .center .userProfile .userDetails  .username p{
+  font-size: 2rem;
+  color: white;
+}
+.mainContainer .center .userProfile .userDetails .right{
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainContainer .center .userProfile .userDetails  .right .buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+.mainContainer .center .userProfile .userDetails  .right .buttons .btn{
+  border: 1px solid white;
+  text-decoration: none;
+  width: 48%;
+}
+.mainContainer .center .userProfile .userDetails  .right .buttons .btn:not(.Followed):nth-child(1){
+  background: white;
+  color: #022F96;
+}
+.mainContainer .center .userProfile .userDetails  .followers{
+
+  display: flex;
+  margin-left: auto;
+}
+.mainContainer .center .userProfile .userDetails  .followers div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+.mainContainer .center .userProfile .userDetails  .followers div h2{
+  font-size: 1.8rem;
+  color: white;
+}
+.mainContainer .center .userProfile .userDetails  .followers div p{
+  font-size: 1.5rem;
+  color: #02F7EA;
+  text-transform: uppercase;
+}
+.mainContainer .center .userProfile .userDetails .username{
+  justify-content: center;
+}
+.mainContainer .center .userProfile .userDetails .username .bio{
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 1.2rem;
+}
+.mainContainer .center .userProfile .userDetails .left .username p:nth-child(2){
+  font-size: 1.6rem;
+  color: #02F7EA;
+}
+.mainContainer .center .writeSomething {
+  margin-bottom: 5rem;
+}
+.mainContainer .center .writeSomething h2{
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #999999;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #00000017;
+}
+.mainContainer .center .writeSomething .inputField{
+  display: flex;
+  margin-top: 1.5rem;
+  justify-content: space-between;
+}
+.mainContainer .center .writeSomething .inputField .left{
+  display: flex;
+  align-items: center;
+}
+.mainContainer .center .writeSomething .inputField .left img{
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 100%;
+}
+.mainContainer .center .writeSomething .inputField .left p{
+  font-size: 1.6rem;
+  color: #999999;
+  margin-left: 1.5rem;
+}
+    .sideNav{
+      width: 38rem;
+    }
+     .usersModal .bg{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: rgb(0,0,0,0.3);
+      
+     }
+     .usersModal{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .usersModal .deleteConfirmation h2{
+      font-size: 2.2rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .usersModal .deleteConfirmation .buttons{
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5rem;
+    }
+    .usersModal .deleteConfirmation .buttons button{
+      padding: 1.5rem 2.5rem;
+      
+    }
+    .usersModal .deleteConfirmation .buttons button:nth-child(2){
+      background-color: transparent;
+      border: 1.5px solid #022F96;
+      color: #022F96;
+    }
+    .PostImageModal{
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      background-color: rgb(0,0,0,0.3);
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 0;
+      z-index: 10;
+    }
+    
+    .PostImageModal .ImageContainer {
+      width: max-content;
+      position: relative;
+      height: max-content;
+    }
+    .PostImageModal .ImageContainer img.close {
+      position: absolute;
+      top: 5%;
+      right: 3%;
+      width: 2rem;
+    }
+    .PostImageModal .ImageContainer img.DisplayImage{
+      border-radius: 2rem;
+      padding: 2.7rem;
+      background-color: white;
+      width: auto;
+      height: auto;
+      max-height: 80vh;
+      min-width: 50vw;
+      max-width: 80vw;
+      object-fit: contain;
+    }
+    .usersModal .PostModal img{
+      width: auto;
+      height: auto;
+      min-width: 50%;
+      object-fit: contain;
+    }
+    .PostImageModal .button{
+      width: 95%;
+      position: absolute;
+      top: 50%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .PostImageModal .button img{
+      background-color: white;
+      padding: 1rem;
+      border-radius: .6rem;
+    }
+    .usersModal .PostModal{
+      max-width: 80%;
+      max-height: 90vh;
+      min-width: 50%;
+      width: auto;
+      height: auto;
+      justify-content: center;
+      align-content: center;
+    }
+    .usersModal .PostModal img{
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+     .usersModal .modal{
+      z-index: 10;
+      width: 38.1rem;
+      border-radius: 1.6rem;
+      padding: 2.2rem;
+      background: #FFF;
+    }
+    .usersModal .modal .topH{
+      font-size: 1.6rem;
+      padding-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #00000017;
+      color: black;
+    }
+     .usersModal .modal .input{
+      width: 100%;
+      height: 3.8rem;
+      border: 1px solid #00000017;
+      border-radius: 5rem;
+      margin: 1.8rem 0;
+      padding-left: 1.6rem;
+      display: flex;
+      align-items: center;
+    }
+     .usersModal .modal .input img{
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+     .usersModal .modal .input input{
+      margin-left: 1rem;
+      font-size: 1.6rem;
+      border: 0;
+      background-color: transparent;
+    }
+    .usersModal .modal .user{
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+     .usersModal .modal .user img{
+      width: 4.3rem;
+      height: 4.3rem;
+      border-radius: 100%;
+    }
+     .usersModal .modal .user .username{
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+    .usersModal .modal .user .username h2{
+      font-size: 1.6rem;
+      color: #333333;
+      font-weight: 600;
+    }
+     .usersModal .modal .user .username p{
+      font-size: 1.2rem;
+      color: #A1A1AA;
+    }
+    .usersModal .modal .user .btn{
+      margin-left: auto;
+      width: 8.8rem;
+      height: 3.2rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+    .usersModal .modal .user .btn.Followed{
+      background-color: white;
+      border: 1px solid #022F96;
+      color: #022F96;
+    }
+     .topH{
+    
+    font-size: 1.6rem;
+    color: #999999;
+    font-weight: 600;
+    margin-bottom: .9rem;
+  }
+  .sideNav .navigation .navItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .sideNav .navigation .navItems .navItem{
+    height: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #999999;
+    margin: .6rem 0;
+    padding-left: 1.5rem;
+    border-radius: 1rem;
+  }
+  .sideNav .navigation .navItems .navItem.dropdown .dropdownMenu{
+    position: absolute;
+    top: 100%;
+    width: max-content;
+    left: -100px;
+    background-color: white;
+    padding: 1rem;
+    max-height: 50rem;
+    overflow: scroll;
+    border-radius: 1rem;
+  }
+  .sideNav .navigation .navItems .navItem img{
+    width: 2rem;
+  }
+  .sideNav .navigation .navItems .navItem img,
+  .sideNav .navigation .navItems .navItem svg {
+    margin-right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  .sideNav .navigation .navItems .navItem svg path{
+    fill: #999999;
+  }
+
+  .sideNav .navigation .navItems .navItem.active {
+    color: #02F7EA;
+    background-color: #022F96;
+  }
+  .sideNav .navigation .navItems .navItem.active svg path{
+    fill: #02F7EA;
+  }
+  .sidebarRight .userCard{
+    
+    background: #022F96;
+    width: 100%;
+    margin-top: 3.5rem;
+    padding: 1.5rem;
+    border-radius: 1.6rem;
+  }
+  .sidebarRight .userCard .user {
+    display: flex;
+    align-items: center;
+  }
+  .sidebarRight .userCard .user img{
+    width: 4.3rem;
+    height: 4.3rem;
+    border-radius: 100%;
+  }
+  .sidebarRight .userCard p.bio{
+    font-size: 1.2rem;
+    color: white;
+    margin: 1rem 0;
+  }
+  .sidebarRight .userCard .user .options{
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebarRight .userCard .user .dropdown{
+    margin-left: auto;
+    position: relative;
+  }
+  .sidebarRight .userCard .user .options .circle{
+    width: .6rem;
+    height: .6rem;
+    background-color: white;
+    border-radius: 100%;
+    margin-bottom: .4rem;
+  }
+  .sidebarRight .userCard .user .dropdownMenu{
+    width: 23.8rem;
+    height: auto;
+    padding: 0.7rem;
+    padding-bottom: 2.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-shadow: var(--shadow);
+    z-index: 10;
+    background-color: white;
+    top: 100%;
+    left: 100%;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    font-weight: 500;
+  }
+  .sidebarRight .userCard .user .dropdownMenu p{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    width: 100%;
+  }
+  .sidebarRight .userCard .user .dropdownMenu p img{
+    width: 2.2rem;
+    margin-right: 1rem;
+    height: 2.2rem;
+  }
+  .sidebarRight .userCard .user .username{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1.2rem;
+  }
+  .sidebarRight .userCard .user .username h2{
+    font-size: 1.6rem;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+  .sidebarRight .userCard .user .username p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #02F7EA;
+  }
+  
+  .sidebarRight .userCard .follow{
+    display: flex;
+    width: 100%;
+    padding: 0 3.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sidebarRight .userCard .follow div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebarRight .userCard .follow div h2{
+    font-size: 2.2rem;
+    color: white;
+    font-weight: 600;
+    
+  }
+  .sidebarRight .userCard .follow div p{
+    font-size: 1.2rem;
+    color: #02F7EA;
+    font-weight: 500;
+  }
+  .sidebarRight .userCard .buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .sidebarRight .userCard .buttons .btn{
+    width: 13rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 1.1rem;
+    font-weight: 500;
+  }
+  .sidebarRight .userCard .buttons .btn.Followed,
+  .sidebarRight .userCard .buttons .btn:nth-child(2){
+    border: 1px solid white;
+    background-color: #022F96 !important;
+    color: white !important;
+  }
+  .sidebarRight .userCard .buttons .btn:nth-child(1){
+    background: white;
+    color: #022F96;
+  }
+  .sideNav .userDetails{
+    margin-top: 5rem;
+  }
+  .sideNav .userDetails .details{
+    display: flex;
+    margin-top: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .sideNav .userDetails .details div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  .sideNav .userDetails .details div h2{
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .sideNav .userDetails .details div p{
+    font-size: 1.2rem;
+    color: #999999;
+  }
+  .sidebarRight{
+width: 38rem;
+  }
+  .sidebarRight .card{
+    /* padding: 2.1rem; */
+  }
+  .sidebarRight .card h2.topH{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #999999;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  .sidebarRight .card .userRowContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .sidebarRight .card .userRowContainer p.null{
+    font-size: 1.6rem;
+  }
+  .sidebarRight .card .userRowContainer .userRow{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: -webkit-fill-available;
+    margin: .6rem 0;
+    padding-left: 1.5rem;
+    height: 5rem;
+  }
+  .sidebarRight .card .userRowContainer .userRow img{
+    width: 4.3rem;
+    height: 4.3rem;
+    border-radius: 100%;
+  }
+  .sidebarRight .card .userRowContainer .userRow .details{
+    margin-left: 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sidebarRight .card .userRowContainer .userRow .details h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333333;
+  }
+  .sidebarRight .card .userRowContainer .userRow .details p{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #A1A1AA;
+  }
+  .sidebarRight .card .userRowContainer .userRow .btn{
+    margin-left: auto;
+    padding: .5rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+  }
+  .sidebarRight .card .userRowContainer .userRow .btn.Followed{
+    background-color: transparent;
+    border: 1px solid #022F96;
+    color: #022F96;
+  }
+  .sidebarRight .card.bottom{
+    margin-top: 2.5rem;
+  }
+
+
+  .FriendsPageCards {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 2.5rem 1.5rem !important;
+    
+  }
+  .FriendsPageCards .SearchedUsers{
+    max-width: 100%;
+    display: flex;
+    overflow: scroll;
+  }
+  .FriendsPageCards .usercard{
+    min-width:23.6%;
+    height: 26rem;
+    border-radius: 1.6rem;
+    background: #FFF;
+    box-shadow: 0px 2px 4px 0px rgba(153, 153, 153, 0.10);
+    display: flex;
+    justify-content: flex-start;
+    background: #F6F9FB;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1.6rem;
+    text-decoration: none;
+    /* margin: 0 1.20rem; */
+    padding: .5rem;
+    margin-bottom: 2.5rem;
+    margin: .6rem;
+  }
+  .FriendsPageCards .usercard:nth-child(1){
+    /* margin-left: 0; */
+  }
+  .FriendsPageCards .usercard:nth-last-child(1){
+    margin-right: 0;
+  }
+  .FriendsPageCards .usercard .top{
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .FriendsPageCards .usercard .profile{
+    width: calc(100% - 6px);
+    background-color: #022F96;
+    height: 8.8rem;
+    border-radius: 1.6rem;
+    margin-top: .3rem;
+    position: relative;
+  }
+  .FriendsPageCards .usercard .profile img:nth-child(1){
+    border-radius: 1.6rem;
+    width: 100%;
+    height: 100%;
+  }
+  .FriendsPageCards .usercard .profile img.user{
+    position: absolute;
+    top: 4.9rem;
+    width: 9.5rem;
+    height: 9.5rem;
+    border: .5rem solid #F6F9FB;
+    border-radius: 5rem;
+    left: 26%;
+  }
+  .FriendsPageCards .usercard h2{
+    margin-top: 5.8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: black;
+  }
+  .FriendsPageCards .usercard p{
+    font-size: 1.2rem;
+    color: #626262;
+  }
+  .FriendsPageCards .usercard .buttons{
+    display: flex;
+    width: 100%;
+    padding: 0 1rem;
+    justify-content: space-between;
+    margin-top: 2.2rem;
+    border-radius: 1rem;
+  }
+  .FriendsPageCards .usercard .btn{
+    width: 48%;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .FriendsPageCards .usercard .btn.Followed{
+    background-color: white;
+    border: 1px solid #022F96;
+    color: #022F96;
+  }
+  .FriendsPageCards .usercard .btn:nth-child(2){
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  .profilePage .sidebarRight .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4.7rem;
+    margin-top: 2rem;
+  }
+  .profilePage .sidebarRight .buttons .btn{
+    width: 13.8rem;
+    height: 4.5rem;
+  }
+  .profilePage .sidebarRight .buttons .btn.btnwhite{
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+  }
+  .profilePage .sidebarRight .details .info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    align-items: center;
+  }
+  .profilePage .sidebarRight .details .info p:nth-child(1){
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .profilePage .sidebarRight .details .info p:nth-child(2){
+    font-size: 1.2rem;
+    color: #626262;
+  }
+
+  .Settings {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5rem !important;
+    flex-direction: column;
+  }
+  .Settings .mainH{
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .Settings .profilePic {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .Settings .profilePic img{
+    width: 12rem;
+    height: 12rem;
+    border-radius: 100%;
+
+  }
+  .Settings .profilePic .change {
+    margin-left: 2.4rem;
+  }
+  .Settings .profilePic .change h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+  .Settings .profilePic .change .btn{
+    width: 13.8rem;
+    position: relative;
+  }
+  .Settings .profilePic .change .btn input{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+    .Settings .inputs{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .Settings .inputs .input{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .Settings .inputs .input label{
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .Settings .inputs .input textarea,
+    .Settings .inputs .input select,
+    .Settings .inputs .input input{
+      width: 40.3rem;
+      height: 4.8rem;
+      border-radius: 1rem;
+      border: 1px solid #000000;
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .Settings .inputs .input textarea{
+      height: 15.2rem;
+    }
+    .Settings .buttons{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .Settings .buttons .btn{
+      width: 17.3rem;
+    }
+    .Settings .buttons .btn:nth-child(2){
+      width: 8.5rem;
+    }
+    .Settings .ChangePasswordModal .bg{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgb(0,0,0,0.3);
+
+    }
+    .Settings .ChangePasswordModal{
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      top: 0;
+      left: 0;
+    }
+    .Settings .ChangePasswordModal .modal{
+      width: 73.5rem;
+      height: auto;
+      border-radius: 1.6rem;
+      z-index: 10;
+      background: #FFF;
+      padding: 2.2rem;
+    }
+    .Settings .ChangePasswordModal .modal .top{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #00000017;
+    }
+    .Settings .ChangePasswordModal .modal .top h2{
+      font-size: 1.6rem;
+      font-weight: 500;
+      padding-bottom: 1.5rem;
+    }
+    .Settings .ChangePasswordModal .modal .inputs{
+      margin-top: 4.5rem;
+      flex-direction: column;
+      width: 100%;
+    }
+    .Settings .ChangePasswordModal .modal .inputs .input{
+      width: 100%;
+    }
+    .Settings .ChangePasswordModal .modal .inputs input{
+      width: 100%;
+    }
+    .Settings .ChangePasswordModal .modal .btn{
+      display: block;
+      margin-left: auto;
+      width: 10rem;
+    }
+
+
+
+    .mainContainer.MessagePage {
+      display: flex;
+      width: 100%;
+      
+    }
+      .mainContainer.MessagePage .sideNavigation{
+        min-width: 9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+      }
+    .mainContainer.MessagePage .sideNavigation .navItems {
+      display: flex;
+      flex-direction: column;
+    }
+    .mainContainer.MessagePage .sideNavigation .navItems .navItem {
+      width: 5rem;
+      height: 5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+    }
+    .mainContainer.MessagePage .sideNavigation .navItems .navItem.active {
+      background-color: #022F96;
+    }
+    .mainContainer.MessagePage .sideNavigation .navItems .navItem.profile {
+      margin-bottom: auto;
+      position: absolute;
+      top: 2rem;
+    }
+    .mainContainer.MessagePage .sideNavigation .navItems .navItem.profile img{
+      width: 4.3rem;
+      border-radius: 100%;
+    }
+    .mainContainer.MessagePage .sideNavigation .navItems .navItem svg {
+      width: 3rem;
+    }
+    .mainContainer.MessagePage .sideNavigation .navItems .navItem svg path {
+      fill: #999999;
+    }
+    .mainContainer.MessagePage .sideNavigation .navItems .navItem.active svg path {
+      fill: #02F7EA;
+    }
+    .mainContainer.MessagePage .Chats{
+      padding: 0 3rem;
+      width: 35%;
+    }
+    .mainContainer.MessagePage .Chats .input{
+      width: 100%;
+      height: 5rem;
+      background-color: #E9F0F4;
+      border-radius: 1.6rem;
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 1.5rem;
+      align-items: center;
+    }
+    .mainContainer.MessagePage .Chats .input .searchResults{
+      position: absolute;
+      top: 100%;
+      background-color: white;
+      width: 100%;
+      left: 0;
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+    .mainContainer.MessagePage .Chats .input .searchResults .user{
+      display: flex;
+      padding: 1.5rem;
+      cursor: pointer;
+    }
+    .mainContainer.MessagePage .Chats .input .searchResults .user:hover{
+      background-color: #00000017;
+      border-radius: 1rem;
+    }
+    .mainContainer.MessagePage .Chats .input .searchResults img{
+      width: 4.3rem;
+      border-radius: 100%;
+      height: 4.3rem;
+      margin-right: 1rem;
+    }
+    .mainContainer.MessagePage .Chats .input .searchResults h2{
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    .mainContainer.MessagePage .Chats .input .searchResults p{
+      font-size: 1.4rem;
+      color: #626262  ;
+    }
+    .mainContainer.MessagePage .Chats .input input{
+      background-color: transparent;
+      border: 0;
+      height: 100%;
+      outline: none;
+      margin-left: 1rem;
+      width: -webkit-fill-available;
+    }
+    .mainContainer.MessagePage .ChatOptions{
+      display: flex;
+      margin: 2.8rem 0;
+    }
+    .mainContainer.MessagePage .ChatOptions .btn{
+      padding: 0 1.5rem;
+      background-color: transparent;
+      color: black;
+    }
+    .mainContainer.MessagePage .ChatOptions .btn.active{
+      background-color: #022F96;
+      color: white;
+    }
+    .mainContainer.MessagePage .userChats .chat{
+      display: flex;
+      cursor: pointer;
+      padding: 1.7rem;
+      width: 100%;
+      border-radius: 1rem;
+    }
+    .mainContainer.MessagePage .userChats .chat img{
+      width: 4.4rem;
+      border-radius: 100%;
+      height: 4.4rem;
+      margin-right: 1rem;
+    }
+    .mainContainer.MessagePage .userChats .chat .chatInner h2{
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: .3rem;
+    }
+    .mainContainer.MessagePage .userChats .chat .chatInner p{
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+    .mainContainer.MessagePage .userChats .chat .time {
+      display: flex;
+      margin-left: auto;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .mainContainer.MessagePage .userChats .chat .time p{
+      font-size: 1.2rem;
+      color: #A1A1AA;
+    }
+    .mainContainer.MessagePage .userChats .chat .time span{
+      background-color: #02F7EA;
+      color: #022F96;
+      padding: .2rem .7rem;
+      font-size: 1.2rem;
+      border-radius: 100%;
+    }
+    .mainContainer.MessagePage .userChats{
+      margin-top: 2rem;
+    }
+    .mainContainer.MessagePage .userChats .chat:hover{
+      background-color: #99999942;
+    }
+      .mainContainer.MessagePage .userChats .chat.active{
+        background-color: #022F96;
+      }
+      .mainContainer.MessagePage .userChats .chat.active h2{
+        color: white;
+      }
+      .mainContainer.MessagePage .userChats .chat.active p{
+        color: #02F7EA;
+        font-weight: 400;
+      }
+      .mainContainer.MessagePage .messagesWindow{
+        width: -webkit-fill-available;
+       margin-right: 0;
+      position: relative;
+
+      }
+      .mainContainer.MessagePage .messagesWindow .topUser{
+        display: flex;
+        align-items: center;
+        padding-bottom: 3.6rem;
+        text-decoration: none;
+        border-bottom: 1px solid #BDBDBE;
+        margin-bottom: 1.5rem;
+      }
+      .mainContainer.MessagePage .messagesWindow .topUser img{
+        width: 4.3rem;
+        height: 4.3rem;
+        border-radius: 100%;
+        margin-right: 1rem;
+      }
+      
+      .mainContainer.MessagePage .messagesWindow .topUser .name h2{
+        font-size: 1.6rem;
+        color: #2F2F2F;
+        font-weight: 5000;
+      }
+      .mainContainer.MessagePage .messagesWindow .topUser .name p{
+        font-size: 1.4rem;
+        color: #626262;
+        font-weight: 500;
+        margin-top: .4rem;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages{
+        max-height: 64vh;
+        overflow: scroll;
+        flex-direction: column-reverse;
+        display: flex;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer{
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer img.profile{
+        width: 4.3rem;
+        height: 4.3rem;
+        margin-right: 1rem;
+        border-radius: 100%;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer  .messageBox{
+        padding: 1.5rem;
+        border-radius: 1rem;
+        max-width: 39rem;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .received  .messageBox{
+        background-color: #E9E9E9;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .sent{
+        flex-direction: row-reverse;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .sent img.profile{
+        margin-right: 0;
+      margin-left: 1rem;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .sent  .messageBox{
+        background-color: #022F96;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer  .messageBox p{
+        font-size: 1.5rem;
+        
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer  .messageBox span{
+        font-size: 1.2rem;
+        margin-top: 1.2rem;
+        color: #979797;
+        width: 100%;
+        margin-left: auto;
+        display: block;
+        text-align: right;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer.typing  .messageBox{
+        display: flex;
+        border-radius: 5rem;
+        border-bottom-left-radius: 0;
+
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer.typing  .messageBox .circle{
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100%;
+        margin: 0 .2rem;
+        background-color: grey;
+        animation: typingAnim 1s linear infinite;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer.typing  .messageBox .circle:nth-child(2){
+        animation-delay: .3s;
+      }
+      .mainContainer.MessagePage .messagesWindow .messages .messageContainer.typing  .messageBox .circle:nth-child(3){
+        animation-delay:.4s;
+      }
+      @keyframes typingAnim {
+        0%{
+          transform: translateY(0px);
+        }50%{
+          transform: translateY(-5px);
+        }
+        100%{
+          transform: translateY(0px);
+        }
+      }
+        .mainContainer.MessagePage .messagesWindow .messages .received  .messageBox p{
+          color: #626262;
+        }
+        .mainContainer.MessagePage .messagesWindow .messages .sent  .messageBox p{
+          color: #02F7EA;
+        }
+        .mainContainer.MessagePage .sendMessage {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          bottom: 2.5rem;
+          width: calc(100% - 5rem)
+        }
+        .mainContainer.MessagePage .sendMessage .input{
+          display: flex;
+          width: -webkit-fill-available;
+          border: 1px solid #626262;
+          border-radius: 5rem;
+          padding-left: 1.5rem;
+          margin-right: 1.7rem;
+          padding-right: 1.5rem;
+          align-items: center;
+          height: 5rem;
+          
+        }
+        .mainContainer.MessagePage .sendMessage .input input{
+          font-size: 1.5rem;
+          outline: none;
+          height: 100%;
+          border: 0;
+          width: -webkit-fill-available;
+        }
+        .mainContainer.MessagePage .sendMessage .input img{
+          width: 2.5rem;
+        }
+.mainContainer.MessagePage .createGroupChat .topH{
+  color: #000;
+}
+.mainContainer.MessagePage .createGroupChat .input{
+  margin-bottom: 1.5rem;
+}
+.mainContainer.MessagePage .createGroupChat .selectedusers {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mainContainer.MessagePage .createGroupChat .btn{
+  padding: 1.5rem;
+}
+.mainContainer.MessagePage .createGroupChat .selectedusers p{
+  padding: 1.5rem;
+  background-color: #022F96;
+  color: white;
+  width: max-content;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+
+
+
+/* SETTINGS PAGE  */
+.SettingsPage .deleteBtn{
+  background: transparent;
+  border: 0;
+  font-size: 1.6rem;
+  color: #F00;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.SettingsPage .deleteBtn img{
+  margin-right: 1rem;
+}
+.SettingsPage .accordians .accordian .accordianButton{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  padding: 2rem 0rem;
+  align-items: center;
+  border-bottom: 1px solid #00000017;
+}
+.SettingsPage .accordians .accordian.blockedAccounts .accordianMenu {
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  
+}
+.SettingsPage .accordians .accordian .accordianMenu {
+  display: none;
+}
+.SettingsPage .accordians .accordian .accordianMenu.active {
+  display: flex;
+}
+.SettingsPage .accordians .accordian .accordianMenu .btn{
+  padding: 1.5rem 2.5rem;
+  display: block;
+  margin-left: auto;
+  margin-top: 1.5rem;
+}
+.SettingsPage .accordians .accordian .accordianMenu .user{
+  display: flex;
+  align-items: center;
+padding: 1rem;
+background-color: #022F96;
+border-radius: 1rem;
+width: max-content;
+margin: .5rem;
+}
+.SettingsPage .accordians .accordian .accordianMenu .user img{
+  width: 4.3rem;
+  border-radius: 100%;
+}
+.SettingsPage .accordians .accordian .accordianMenu .user p{
+  font-size: 1.4rem;
+  color: #02F7EA;
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .input{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect{
+  width: 100%;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .input{
+  width: 100%;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .input label{
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .input select{
+  width: 100%;
+  height: 5rem;
+  padding-left: 1.5rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-top: 1.2rem;
+  border: 1px solid #999;
+  border-radius: 1rem;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom {
+  display: none;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom.active {
+  display: block;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .searchUser{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .searchUser .input{
+  border-radius: 1.6rem;
+  background: #E9F0F4;
+  padding-left: 1.5rem;
+  width: 26.2rem;
+  height: 4.8rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1.2rem;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .searchUser {
+  position: relative;
+  width: max-content;
+  
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .searchUser .input input{
+  margin-left: 1rem;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .searchUser .input img{
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .searchUser .searchedUsers{
+  position: absolute;
+  box-shadow: 0px 10px 18px 6px rgba(203, 203, 203, 0.33);
+max-height: 19.2rem;
+overflow: scroll;
+  top: 100%;
+  background-color: white;
+  width: 100%;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .searchUser .searchedUsers .user{
+  display: flex;
+  align-items: center;
+  background: transparent;
+  margin: 0;
+  border-bottom: 1px solid #999;
+  border-radius: 0;
+  width: 100%;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .searchUser .searchedUsers .user p{
+  color: #999;
+}
+.SettingsPage .accordians .accordian .accordianMenu .privacySelect .custom .SelectedUsers{
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 14.6rem;
+  overflow-y: scroll;
+}
+*::-webkit-scrollbar{
+  width: 5px;
+}
+*::-webkit-scrollbar:horizontal{
+  height: 5px;
+}
+*::-webkit-scrollbar-thumb{
+  width: 5px;
+  background-color: #022F96;
+  border-radius: 5rem;
+}
+.EditProfile .deleteAccountModal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.EditProfile .deleteAccountModal .bg{
+  width: 100%;
+  height: 100%;
+  background: rgb(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.EditProfile .deleteAccountModal .modal{
+  width: 60rem;
+  padding: 2.5rem;
+  z-index: 100;
+  background: white;
+  padding-top: 5rem;
+  position: relative;
+  border-radius: 1.6rem;
+}
+  .EditProfile .deleteAccountModal .modal .close{
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+  }
+.EditProfile .deleteAccountModal .modal .error{
+  font-size: 1.4rem;
+  color: red;
+  margin-top: 1rem;
+}
+.EditProfile .deleteAccountModal .modal h2{
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: 500;
+}
+.EditProfile .deleteAccountModal .modal .input{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+.EditProfile .deleteAccountModal .modal .input label{
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.EditProfile .deleteAccountModal .modal .input input{
+  width: 100%;
+  font-size: 1.4rem;
+  padding-left: 1.5rem;
+  outline: none;
+  background: #E9F0F4;
+  border: 0;
+  height: 4rem;
+  border-radius: 1rem;
+}
+.EditProfile .deleteAccountModal .modal  .buttons{
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  margin: auto;
+  margin-top: 1.5rem;
+}
+.EditProfile .deleteAccountModal .modal  .buttons button{
+  padding: 1rem 2.5rem;
+}
+.EditProfile .deleteAccountModal .modal  .buttons button:nth-child(1){
+  background: transparent;
+  border: 1px solid #022F96;
+  color: #022F96;
+}
+.commentsModal{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: flex;
+  top: 0;
+  height: 100vh;
+  background: #00000017;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.commentsModal .modal{
+  height: max-content;
+  width: 80rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  max-height: 80vh;
+}
+.commentsModal .modal .topH{
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.commentsModal .modal .topH img{
+  width: 2.2rem;
+}
+.commentsModal .modal .Comments{
+  overflow: scroll;
+}
+.commentsModal .modal .comment {
+  margin-bottom: 1.5rem;
+}
+.commentsModal .modal .comment .commentText{
+  font-size: 1.5rem;
+  color: white;
+  background-color: #022F96;
+  border-radius: 1rem;
+  margin-top: 1.2rem;
+  width: max-content;
+  padding: 1rem;
+}
+.commentsModal .modal .comment .user{
+  display: flex;
+}
+.commentsModal .modal .comment .user img{
+  width: 4.3rem;
+  border-radius: 100%;
+}
+.commentsModal .modal .comment .user .username{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 1.2rem;
+}
+.commentsModal .modal .comment .user .username h2{
+  font-size: 1.5rem;
+  color: #2F2F2F;
+}
+.commentsModal .modal .comment .user .username p{
+  font-size: 1.4rem;
+  color: #626262;
+}
+.mainContainer.MessagePage .sideNav .navigation .navItems .navItem p{
+  display: none;
+}
+.mainContainer.MessagePage .sideNav .logo{
+  visibility: hidden;
+}
+.mainContainer.MessagePage .sideNav {
+  width: max-content;
+  padding-left: 1.5rem;
+}
+.mainContainer.MessagePage .sideNav .navigation .navItems .navItem {
+  width: 62%;
+}
+@media (max-width : 1760px) {
+  .postsContainer .post .Slider .button{
+    left: 1rem;
+  }
+  .FriendsPageCards{
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .sidebarRight,
+  .sideNav {
+    width: 34rem;
+  }
+  .mainContainer .center{
+    width: 85rem;
+  }
+  .mainContainer {
+    width: max-content;
+  }
+  .postsContainer .post .Slider .slides {
+    width: 42rem;
+  }
+  .Settings .inputs .input textarea, .Settings .inputs .input select, .Settings .inputs .input input{
+    width: 36.3rem;
+  }
+}
+@media (max-width : 1600px){
+  .postsContainer .post .Slider .button {
+    width: 36.3rem;
+    padding: 0 1.5rem;
+  }
+  html {
+    font-size: 57.5%;
+}
+.postsContainer .post .Slider {
+  width: 50%;
+}
+.postsContainer .post .Slider .slides{
+  width: 100%;
+}
+.postsContainer .post:not(.onlyTextPost) .right{
+  width: 50%;
+}
+.mainContainer.MessagePage .header img.logo{
+  visibility: hidden;
+}
+}
+@media (max-width : 1460px){
+.mainContainer.MessagePage .sideNav {
+  padding-left: 0;
+}
+  .sideNav .navigation .navItems .navItem p{
+    /* display: none; */
+  }
+  .mainContainer{
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+  .sideNav .navigation .navItems .navItem p{
+    display : none
+  }
+  .sideNav .notif .dropdownMenu .notification .notifContent p{
+    display: block;
+  }
+  .sidebarRight, .sideNav {
+    width: max-content;
+}
+  .sideNav .navigation .navItems .navItem{
+    width: 62%;
+  }
+  .sideNav{
+    position: absolute;
+    left: 2rem;
+  }
+  .mainContainer.MessagePage{
+    width: 94%;
+    margin-right: 0;
+  }
+
+  .EditProfile{
+    margin: auto;
+    padding-left: 8rem;
+  }
+}
+@media (max-width : 1250px){
+  .postsContainer .post .Slider .button {
+    left: 18%;
+}
+  .postsContainer .post{
+    flex-direction: column;
+    align-items: center;
+  }
+  .postsContainer .comments{
+    height: max-content;
+    max-height: 12rem;
+  }
+  .mainContainer .center {
+    width: 65rem;
+}
+.postsContainer .post {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top:9rem;
+}
+.postsContainer .post .Slider {
+  width: 100%;
+}
+.postsContainer .post .Slider .slides{
+  height: max-content;
+}
+.postsContainer .right{
+  width: 100%;
+  margin-left: 0;
+}
+.postsContainer .right .Top .userDetails{
+  position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    padding:3rem;
+}
+.postsContainer .right .Top .dropdown{
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+.postsContainer .right .user{
+  border-bottom: 0;
+}
+.sidebarRight{
+display: none;
+}
+.mainContainer .center .userProfile.authUserDetails{
+  display: flex;
+}
+.mainContainer{
+  margin: auto;
+  padding-left: 9.2rem;
+}
+.mainContainer .center .userProfile .userDetails .left{
+  flex-direction: column;
+}
+.mainContainer .center .userProfile .userDetails .right{
+  position: absolute;
+  right: 5rem;
+  top: 2.5rem;
+}
+.FriendsPageCards .usercard{
+ min-width: 31%;
+}
+.mainContainer .center .userProfile{
+  padding-left: 1.2rem;
+}
+.mainContainer .center .userProfile .userDetails .username{
+  margin-top: 1.2rem;
+}
+.postsContainer .comments{
+  display: none;
+}
+.mainContainer.MessagePage{
+  padding-left: 0;
+}
+.Settings .inputs{
+  flex-direction: column;
+}
+.Settings .inputs .inputs2,
+.Settings .inputs .input,
+.Settings .inputs .input textarea, .Settings .inputs .input select, .Settings .inputs .input input{
+  width: 100%;
+}
+}
+@media (max-width : 1150px){
+.LoginRegister{
+  flex-direction: column;
+}
+.LoginRegister .left{
+  margin-bottom: 4rem;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LoginRegister .left h2{
+  font-size: 8rem;
+}
+.LoginRegister .left,
+.LoginRegister .right{
+  width: 100%;
+}
+  .header{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+.mobileheader{
+  display: none;
+}
+
+@media screen and (max-width : 992px) {
+  .PostMdalContainer .PostModal{
+    width: 90vw;
+  }
+  
+  .mainContainer.MessagePage .Chats{
+    width: 91%;
+    position: absolute;
+    z-index: 1;
+    background: #F1F1F5;
+    height: 100vh;
+    right: 0;
+  }
+  .mainContainer.MessagePage .Chats.hide{
+    display: none;
+  }
+  
+}
+@media screen and (max-width : 768px) {
+  .mainContainer.MessagePage{
+    margin-left: 0;
+    width: 100%;
+  }
+  .mainContainer.MessagePage .Chats .logo{
+    visibility: hidden;
+  }
+  .PostMdalContainer .PostModal .DisplayImgs{
+    flex-wrap: wrap;
+  }
+  .PostMdalContainer .PostModal .DisplayImgs .img{
+    margin-bottom: .5rem;
+  }
+  .PostMdalContainer .PostModal .DisplayImgs .img img{
+    width: 11rem;
+    height: 11rem;
+  }
+  .mainContainer.MessagePage .Chats{
+    width: 100%;
+    left: 0;
+    right: initial;
+    padding-right: 0;
+    /* position: static; */
+  }
+.commentsModal .modal{
+  width: 90vw;
+}
+
+  .mobileheader{
+    display: flex;
+    align-items: center;
+    padding-left: 2.5rem;
+    position: fixed;
+    justify-content: center;
+    width: 100%;
+    padding-top: 2.5rem;
+    z-index: 11;
+    background: #F6F9FB;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #022F96;
+  }
+  .mobileheader img{
+    max-height: 30px;
+  }
+  .sideNav .searchBox{
+    padding-top: 10rem;
+
+  }
+  .sideNav .searchBox.active{
+    width: 100%;
+  }
+  .mobileheader .ham{
+    position: absolute;
+    top: 2.9rem;
+    left: 2.5rem;
+  }
+  .header{
+    display: none;
+  }
+  .mainContainer.MessagePage .sideNav .navigation .navItems .navItem p{
+    display: flex;
+  }
+  .mainContainer.MessagePage .sideNav,
+  .sideNav{
+    width: 0%;
+    background: #F6F9FB;
+    z-index: 10;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    height: 100vh;
+    left: 0;
+padding-left: 0;
+    padding-top: 10rem;
+  }
+  .mainContainer.MessagePage .sideNav.active,
+  .sideNav.active{
+    width: 100%;
+    position: fixed;
+    padding-left: 1.5rem;
+
+  }
+  .sideNav .navigation .navItems .navItem p{
+    display: block;
+  }
+  .mainContainer{
+padding-left: 0;
+width: 100%;
+}
+.mainContainer .center{
+    margin-right: 0;
+    width: 100%;
+    margin-left: 0;
+    padding-top: 10rem !important;
+  }
+  .postsContainer .post .Slider .button{
+    position: static;
+    width: 100%;
+    margin-top: 1.2rem;
+  }
+  .postsContainer .post .Slider .button .nav{
+    max-width: 50%;
+    justify-content: flex-start;
+    height: 100%;
+    align-items: center;
+  }
+  .sideNav .notif .dropdownMenu{
+    padding-top: 10rem;
+  }
+  .EditProfile .center{
+    padding-top: 10rem !important;
+  }
+}
+
+@media screen and (max-width : 525px) {
+  .mainContainer .center .userProfile .userDetails {
+    flex-direction: column;
+  }
+  .mainContainer .center .userProfile .userDetails .right{
+    position: static;
+    margin-left: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .mainContainer .center .userProfile .userDetails .followers{
+    margin-left: 0;
+  }
+  .mainContainer .center .userProfile .userDetails .left{
+    flex-direction: row;
+  }
+  .FriendsPageCards .usercard {
+    min-width: 47%;
+}
+.FriendsPageCards .usercard .profile img.user{
+  left: 31%;
+}
+.PostMdalContainer .PostModal .searchUsers{
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.PostMdalContainer .PostModal .searchUsers .selectedUsers{
+  margin-top: 1rem;
+  padding-left: 0;
+}
+.PostMdalContainer .PostModal .searchUsers .input{
+  width: 100%;
+}
+.LoginRegister .left h2{
+font-size: 5rem;
+margin-top: 3rem;
+}
+.LoginRegister .right .box{
+  width: 95%;
+  padding: 3rem;
+}
+.LoginRegister .right .topButton{
+  width: 100%;
+  padding-left: 19%;
+  padding-right: 12%;
+}
+.LoginRegister .right .inputs{
+  flex-direction: column;
+  width: 100%;
+}
+.LoginRegister .right .topButton .bg{
+  width: 50%;
+}
+.LoginRegister .right .input {
+  width: 100%;
+}
+.LoginRegister .right .inputs .input input,
+.LoginRegister .right .input input{
+  width: 100%;
+
+}
+}
+
+
+@media screen and (max-width : 525px) {
+  .FriendsPageCards .usercard {
+    min-width: 45%;
+  }
+  .FriendsPageCards .usercard .profile img.user {
+    left: 25%;
+}
+}
