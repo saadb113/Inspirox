@@ -24,6 +24,7 @@ const [BlockedByOthers, setBlockedByOthers] = useState([])
   useEffect(() => {
     apis.fetchPosts(userId).then((data) => {
       setPosts(data);
+      console.log(data)
     });
     if (userId) {
       apis.getSpecificUser(userId).then((data) => {
