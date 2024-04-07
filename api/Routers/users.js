@@ -236,9 +236,9 @@ const  user = req.user
 const {oldpassword, newpassword} = req.body
 const myUser = await User.findById(user._id)
 
-const comparedPassword = bcrypt.compare(oldpassword, myUser.password)
+const comparedPassword = await bcrypt.compare(oldpassword, myUser.password)
 
-
+console.log(comparedPassword)
 if(comparedPassword){
   const hashedpassword = bcrypt.hashSync(newpassword, salt)
   const password = await User.findByIdAndUpdate(user._id, {password : hashedpassword}, {new : true})

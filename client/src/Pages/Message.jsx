@@ -260,7 +260,7 @@ useEffect(() => {
             </div>
             <div className="sendMessage">
               <div className="input">
-                <input type="text" onChange={(e)=>typingHandler(e)}
+                <input type="text" value={message} onChange={(e)=>typingHandler(e)}
                 onKeyDown={(e) => onEnterSend(e, SelectedChat._id)} />
                 <img src='./Images/ImageUploadIcon.png' alt="" />
               </div>

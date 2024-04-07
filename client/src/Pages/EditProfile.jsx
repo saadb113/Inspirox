@@ -42,9 +42,16 @@ if(newpassword == confirmNewPassword){
             oldpassword,
             newpassword
         })
+    }).then((res)=>{
+        if(res.status == 200){
+            alert("Password Changed Successfully!")
+        }else{
+            alert("Current Password is Wrong!")
+        }
     })
+    
 }else{
-    console.log("password not matched")
+    alert("Password Not Matched")
 }
 }
 useEffect(() => {

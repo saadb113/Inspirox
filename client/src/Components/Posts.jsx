@@ -25,14 +25,18 @@ const Posts = ({ openCommentFunc,element, userId }) => {
   const [editCaption, seteditCaption] = useState(element.caption)
   const [postOptions, setpostOptions] = useState(false)
   const [postModal, setpostModal] = useState(false)
+  const [UserComment, setUserComment] = useState([])
   const [Liked, setLiked] = useState(element.likes.filter(x=>x._id == userId).length == 0)
   const [likeCount, setlikeCount] = useState(0)
   const PostEngagement = async (e, PostId, value) => {
     if (value == "Thought") {
 
       apis.postEngagement(e, PostId, value, userId, comment).then(data => {
-
+        setUserComment([
+          {user : data.user.username,dp :data.user.dp,name: data.user.name, time : data.time, comment}
+        ,...UserComment])
       })
+      setcomment("")
     } else {
       apis.postEngagement(e, PostId, value, userId, comment)
       if(Liked){
@@ -316,6 +320,21 @@ const Posts = ({ openCommentFunc,element, userId }) => {
           </div>
 
           <div className="comments">
+          {UserComment.map((comment, index) => {
+             
+             return (
+               <div className="comment" key={index}>
+                 <Link to={`/user/${comment.user}`} className="user">
+                   <img src={`http://localhost:8000/uploads/${comment.dp}`} alt="" />
+                   <div className="username">
+                     <h2>{comment.name}</h2>
+                     <p>{comment.time}</p>
+                   </div>
+                 </Link>
+                 <div className="text">{comment.comment}</div>
+               </div>
+             );
+           })}
             {element.comments.map((comment, index) => {
               const userimg = Comments[comment.user] || '';
 
@@ -332,6 +351,7 @@ const Posts = ({ openCommentFunc,element, userId }) => {
                 </div>
               );
             })}
+            
           </div>
 
           <div className="engage">

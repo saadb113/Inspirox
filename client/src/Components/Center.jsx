@@ -178,7 +178,7 @@ const Center = ({ user, authUser, Posts }) => {
                     <p>Add to your post</p>
                     <div className="img">
                       <img src={ImageUploadIcon} alt="" />
-                      <input type="file" multiple accept=".png,.jpg,.mp4,.pdf,.doc,.xls,.docx,.xlsx,.txt" onChange={(event) => ImgUpload(event)} />
+                      <input type="file" title="" multiple accept=".png,.jpg,.mp4,.pdf,.doc,.xls,.docx,.xlsx,.txt" onChange={(event) => ImgUpload(event)} />
                     </div>
 
                   </div>
@@ -266,12 +266,13 @@ OpenModal &&
 
             
           </div>
-          <div class="dropdown">
+         { authUser._id != user._id ? <div class="dropdown">
             <div class="options" onClick={() => setuserOptions(!userOptions)}>
               <div class="circle"></div>
               <div class="circle"></div>
               <div class="circle"></div>
             </div>
+            {console.log(userOptions)}
             {
               userOptions ?
                 <div class="dropdownMenu">
@@ -280,7 +281,7 @@ OpenModal &&
                     <img src="./Images/block.png" alt="" /> Block</p>
                 </div> : ""
             }
-          </div>
+          </div> : ""}
 
         </div>
         <div className="writeSomething" onClick={() => setPostsModal(!PostsModal)}>

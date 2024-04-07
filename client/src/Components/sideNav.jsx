@@ -213,7 +213,7 @@ setunsreadNotifications([])
                         <div className={`dropdownMenu ${profileDropdown ? "active" : ""}`}>
                             <Link to={`/user/${authUser._id}`}>My Account</Link>
                             <Link to="/editProfile">Edit Profile</Link>
-                            <p  style={{borderTop : "1px solid grey"}} onClick={()=>{
+                            <p  style={{borderTop : "1px solid grey", display : "flex", cursor : "pointer"}} onClick={()=>{
                                 localStorage.removeItem("token")
                                 window.location.href = "/login"
                             }}>Logout</p>

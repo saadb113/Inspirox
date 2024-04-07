@@ -69,7 +69,11 @@ const storage = multer.diskStorage({
         { new: true }
       );
       
-      // res.send(newComment.filter(x=>x.comments._id == PostId))
+      const populateCommentUser = await User.populate(comment, {
+        path : "user",
+        select : "name username dp"
+      })
+      res.json(populateCommentUser)
       
      
     }

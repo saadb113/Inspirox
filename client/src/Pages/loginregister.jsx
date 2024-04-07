@@ -59,6 +59,8 @@ const Loginregister = () => {
           alert("User Already Exists")
         } else if (res.status == (200)) {
           alert("User Created Successfully, Please Login")
+          window.location.href = "/"
+
         } else {
           alert("An Error Occured")
         }
