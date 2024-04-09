@@ -83,6 +83,10 @@ const chatdata = [
   
 ]
 
+app.get("/home", (req,res)=>{
+res.send("Home")
+})
+
 
 
 
