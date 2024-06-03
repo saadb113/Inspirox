@@ -29,9 +29,7 @@ app.use('/message', messageRoute);
 
 // Routes for User Authentication
 app.use('/', homeRoute);
-app.get("/", (req,res)=>{
-  res.send("hello")
-})
+
 io.on('connection', (socket) => {
   socket.on("setup", (userData) => {
     socket.join(userData._id);
@@ -85,9 +83,7 @@ const chatdata = [
   
 ]
 
-app.get("/home", (req,res)=>{
-res.send("Home")
-})
+
 
 
 
